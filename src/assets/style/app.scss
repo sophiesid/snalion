@@ -38,36 +38,50 @@ h3{
 }
 
 
-// #particle-canvas {
-//   width: 100%;
-//   position: absolute;
-// height: 50vh;
-//   background: url(../img/back.png);
-//   background-size: cover;
-//   z-index: -1;
+#particle-canvas {
+	width: 100%;
+	height: 100%;
+	background: url(../img/back.png);
+	background-size: cover;
+	z-index: -1;
+	position: relative;
 
-
-
-// }
+}
 
 
 .ba-intro{
-background: url(../img/back.png) 50% no-repeat;
-background-size: cover;
+// background: url(../img/back.png) 50% no-repeat;
+// background-size: cover;
+height: 80vh;
+width: 100%;
+margin: 0;
+padding: 0;
+overflow: hidden;
+@media (min-width: $screen-md){
+	height: 90vh;
+}
+&__front{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
 
 	&__title{
 		color: #FFF;
 		letter-spacing: -0.08em;
-		font-size: 96px;
+		font-size: 68px;
 		text-align: center;
-		@media (min-width: $screen-md){
+		line-height: 1;
+		@media (min-width: $screen-sm){
 			font-size: 172px;
 		}
 	}
 	&__content{
-		padding: 50px 0 100px;
+		padding: 20px 0 100px;
 		@media (min-width: $screen-md){
-			padding: 70px 0 110px;
+			padding: 20px 0 110px;
 		}
 	}
 }
@@ -103,7 +117,7 @@ background-size: cover;
 // 	}
 // }
 .ba-header{
-	padding-top: 40px;
+	padding-top: 30px;
 
 
 }
@@ -125,7 +139,7 @@ background-size: cover;
 	}
 }
 .navbar-default .navbar-toggle {
-	margin-top: 40px;
+	margin-top: 30px;
     border-color: transparent;
     .icon-bar{
     	background: #FFF;
@@ -204,8 +218,10 @@ background-size: cover;
 	&__title{
 		position: absolute;
 		top: 90px;
-		left: 45%;
+		left: 49%;
 		right: 0;
+
+		margin-left: -100px;
 		color: #FFF;
 		z-index: 8;
 	}
@@ -312,7 +328,8 @@ background-size: cover;
 		top: 80%;
 		left: 46%;
 		right: 0;
-		margin: 0 auto;
+
+		margin-left: -30px;
 	}
 	.btn{
 		&--arrows{
@@ -464,13 +481,35 @@ background-size: cover;
 
 	&__item{
 		width: 50%;
+
 		padding: 0 $grid-gutter-width/2 $grid-gutter-width;
 		@media (min-width: $screen-md){
 			width: 33.333%;
 		}
+		&:hover .ba-portfolio__layout{
+			opacity: 1;
+		}
 		img{
 			display: block;
 			width: 100%;
+			position: relative;
+		}
+	}
+	&__layout{
+		width: 91%;
+		position: absolute;
+		top: 0;
+		left: 15px;
+		right: 0;
+		bottom: 29px;;
+		background: rgba(0, 0, 0, 0.38);
+		opacity: 0;
+		transition: opacity .5s;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.ba-button{
+			padding: 10px 20px;
 		}
 	}
 }
@@ -551,19 +590,19 @@ background-size: cover;
 
 			}
 		}
-		.ba-button{
-			background: $brand-primary;
-			border: 1px solid transparent;
-			color: #fff;
-			text-transform: uppercase;
-			padding: 10px 73px;
-			&:hover{
-				background:	darken($brand-primary, 15%);
-			}
-		}
+
 	}
 }
-
+.ba-button{
+	background: $brand-primary;
+	border: 1px solid transparent;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 73px;
+	&:hover{
+		background:	darken($brand-primary, 15%);
+	}
+}
 .ba-footer{
 	background: $brand-primary url(../img/footerbg.jpg) 50% no-repeat;
 	background-size: cover;

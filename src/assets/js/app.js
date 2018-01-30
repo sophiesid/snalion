@@ -8,7 +8,7 @@
 //=require slick.min.js
 //=require libs/isotope.pkgd.min.js
 //require libs/masonry.pkgd.min.js
-//require intro.js
+//=require intro.js
 
 
 
